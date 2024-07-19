@@ -1,0 +1,138 @@
+ /* INDEX */
+.listagem_solucoes {
+  width: 90%;
+  margin: 0 5%;
+  text-align: left;
+  font-size: 20px;
+}
+
+.inicial-logo-sessao{
+  background-color: rgb(39, 84, 189);
+  
+}
+
+h1 {   
+     font-size: 25px; 
+}
+
+
+.cabecalho_tabela{
+  color:antiquewhite;
+  background-color: rgb(39, 84, 189);
+}
+
+tbody .dados-listagem-solucoes {
+  background-color: rgb(255, 255, 255);
+  transition: all 0.2s linear;
+  transition-delay: 0.3s, 0s;
+  opacity: 0.6;
+  padding: 5px;  
+  
+}
+
+tbody .dados-listagem-solucoes:hover  {
+  background-color: rgb(7, 124, 163);
+  color:white;
+  transition-delay: 0s, 0s;
+  opacity: 1;
+  font-size: 1.1em;
+ 
+}
+
+.cabecalho_tabela {
+  padding: 0.5em;
+}
+
+tr:hover td {
+  transform: scale(1.0);
+}
+
+.body-inicial {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: hsl(0, 0%, 100%);
+  color: rgb(9, 31, 110);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.header-container img {
+  width: 150px;
+  height: 100px;
+}
+
+
+/*PAINEL*/
+.painel-logo-sessao{
+  background-color: rgb(39, 84, 189);
+}
+
+.body-painel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: hsl(0, 0%, 100%);
+  color: rgb(9, 31, 110);
+}
+
+.btn-custom{
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    background-color: rgb(39, 84, 189);
+    border: none;
+    padding: 12px 38px 7px 38px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    outline: 0;
+    font-weight: 700;
+}
+
+.btn-custom:hover {
+  background-color: rgb(5, 195, 5);
+}
+
+.small-py-1-custom {
+  display: flex;
+  align-items: center;
+  color:rgb(0, 0, 0);
+  font-weight:bold;
+}
+
+.dados-listagem-painel:hover{
+  background-color: rgb(190, 225, 237);
+  color:rgb(0, 0, 0);
+  transition-delay: 0s, 0s;
+  opacity: 1;
+  font-size: 1.5 em;
+
+}
+
+/* TRANSFERÊNCIA*/
+.transferencia-logo-sessao{
+  background-color: rgb(39, 84, 189);
+}
+
+
+
+
+
+ /* VALIDADE */
+
+
+
+
+
+
+
+  /*SUGESTÃO DE COMPRAS*/

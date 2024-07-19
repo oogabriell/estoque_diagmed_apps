@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencia entre estoques</title>
+    <!-- CSS -->    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<div class="transferencia-logo-sessao">
+    <header >
+        
+        <img src="static/image/Logo-Diagmed-Branco.png"  style="width:150px;height:100px;"   alt="" >    
+          
+    </header> 
+</div>
+
+<body class="body-transferencia">
+    <form method="POST" action = "{{url_for('dados_transferencia')}}" class="mt-4">
+        <div class="row">
+            <label for="Transferencia-pesquisa-coligada-filial-origem" class="col-sm-2 col-form-label">ORIGEM</label>
+            <div class="col-md-6">
+                
+                <select class="form-control form-control-sm" id="origem" name="origem">
+
+                                    <option value="">FILIAL</option>
+                                    <option value="DIAGMED - CAMPINAS">DIAGMED - CAMPINAS</option>
+                                    <option value="DIAGMED - SUMARÉ">DIAGMED - SUMARÉ</option>
+                                    <option value="DIAGMED - INDAIATUBA">DIAGMED - INDAIATUBA</option>
+                                    <option value="DIAGMED - HORTOLANDIA">DIAGMED - HORTOLANDIA</option>
+                                    <option value="DIAGMED - JUNDIAI">DIAGMED - JUNDIAI</option>
+                                    <option value="CENTRALAB - CENTRALAB">CENTRALAB - CENTRALAB</option>
+                                    <option value="MEDIPLACE - SHOPPING">MEDIPLACE - SHOPPING</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <label for="" class="col-sm-2 col-form-label">DESTINO</label>
+            <div class="col-md-6">
+                <select class="form-control form-control-sm" id="destino" name="destino">
+                    <option value="">FILIAL</option>
+                    <option value="DIAGMED - CAMPINAS">DIAGMED - CAMPINAS</option>
+                    <option value="DIAGMED - SUMARÉ">DIAGMED - SUMARÉ</option>
+                    <option value="DIAGMED - INDAIATUBA">DIAGMED - INDAIATUBA</option>
+                    <option value="DIAGMED - HORTOLANDIA">DIAGMED - HORTOLANDIA</option>
+                    <option value="DIAGMED - JUNDIAI">DIAGMED - JUNDIAI</option>
+                    <option value="CENTRALAB - CENTRALAB">CENTRALAB - CENTRALAB</option>
+                    <option value="MEDIPLACE - SHOPPING">MEDIPLACE - SHOPPING</option>
+                </select>
+            </div>
+        </div>
+        
+    <div class="row">
+        <div class="col-md-6">
+            <label for="" class="col-sm-2 col-form-label">Data inicial:</label>
+            <input id="datainicial" name="datainicial" type="date">       
+                
+            <label for="" class="col-sm-2 col-form-label">Data final:</label>
+            <input id="datafinal" name="datafinal" type="date">
+            
+        </div>
+    </div>
+    <br>  
+    <br>
+        
+        <div class="row">                     
+                <button class="btn-custom" type="submit">Pesquisar</button>            
+                <button class="btn-custom" onclick="exportDataExcel()">Exportar ▶</button> 
+                <button class="btn-custom">Imprimir 🎫</button>         
+        </div>        
+    
+    </form>
+    <div class="container">
+        <table name="tabelaDadosTransferencia" class="table mt-4 small-font">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Origem</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Destino</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dado in dados %}
+                <tr>
+                    <td>{{dado.STATUS}}</td>
+                    <td>{{ dado.DATAEMISSAO }}</td>
+                    <td>{{ dado.ORIGEM }}</td>
+                    <td>{{ dado.DESCRICAO }}</td>
+                    <td>{{ dado.VALOR | float }}</td>
+                    <td>{{ dado.DESTINO }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+                          
+              
+        </tr>          
+                                      
+        </table>  
+        
+</div>
+      <!-- JAVASCRIPT -->      
+      <script src="/static/script.js"></script>
+      <!--biblioteca xlsx-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+      <!--salvar arquivo-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    
+</body>
+
+<br>
+<footer>
+    
+
+</footer>
